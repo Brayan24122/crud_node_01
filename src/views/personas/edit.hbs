@@ -1,0 +1,30 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">EDITANDO UNA PERSONA</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{registros.id_r}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="nombre_r" class="input-group-text">Nombre</label>
+                        <input class="form-control" type="text" name="nombre_r" id="nombre_r" value="{{registros.nombre_r}}" placeholder="Ejemplo: Luis Angel" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="apellido_r" class="input-group-text">Apellido</label>
+                        <input class="form-control" type="text" name="apellido_r" id="apellido_r" placeholder="Ejemplo: Fernandez" value="{{registros.apellido_r}}" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="edad_r" class="input-group-text">Edad</label>
+                        <input class="form-control" type="number" name="edad_r" id="edad_r" value="{{registros.edad_r}}" placeholder="0" required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
