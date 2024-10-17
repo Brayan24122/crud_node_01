@@ -4,7 +4,8 @@ import {engine} from 'express-handlebars';
 import {join, dirname} from 'path';
 import {fileURLToPath} from 'url';
 import registrosRoutes from './routes/registros.routes.js';
-import navegacionRoutes from './routes/navegacion.routes.js'
+import navegacionRoutes from './routes/navegacion.routes.js';
+import rutasbusesRoutes from './routes/rutasbuses.routes.js';
 
 //Inicializacion
 const app = express();
@@ -34,6 +35,7 @@ app.get('/', (req, res) => {
 
 app.use(registrosRoutes);
 app.use(navegacionRoutes);
+app.use(rutasbusesRoutes);
 
 //Public files
 app.use(express.static(join(__dirname, 'public')));

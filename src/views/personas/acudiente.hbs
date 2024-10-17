@@ -1,0 +1,40 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">REGISTRO DE ACUDIENTE</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/acudiente" method="post">
+                    <div class="input-group mt-2">
+                        <label for="nombre_a" class="input-group-text">Nombre</label>
+                        <input class="form-control" type="text" name="nombre_a" id="nombre_a" placeholder="Ejemplo: Luis Angel" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="apellido_a" class="input-group-text">Apellido</label>
+                        <input class="form-control" type="text" name="apellido_a" id="apellido_a" placeholder="Ejemplo: Fernandez" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="edad_a" class="input-group-text">Edad</label>
+                        <input class="form-control" type="number" name="edad_a" id="edad_a" placeholder="0" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_p_a" class="input-group-text">Profecion</label>
+                            <select class="form-select" aria-label="Default select example" id="id_p_a" name="id_p_a">
+                                {{#if profecion}}
+                                    {{#each profecion}}
+                                    <option value="{{id_p}}">{{descripcion}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Crear</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

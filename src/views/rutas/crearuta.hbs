@@ -1,0 +1,46 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">CREAR SERVIO DE RUTA</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/crearuta" method="post">
+                    <div class="input-group mt-2">
+                        <label for="dirigue_re" class="input-group-text">Donde se dirigue</label>
+                        <input class="form-control" type="text" name="dirigue_re" id="dirigue_re" placeholder="Ejemplo: 20 de julio" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="tiempo_re" class="input-group-text">Timepo de recolido</label>
+                        <input class="form-control" type="number" name="tiempo_re" id="tiempo_re" placeholder="Se numero en horas" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_re_e" class="input-group-text">Estaciones</label>
+                            <select class="form-select" aria-label="Default select example" id="id_re_e" name="id_re_e">
+                                {{#if estaciones}}
+                                    {{#each estaciones}}
+                                    <option value="{{id_e}}">{{nombre_e}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_re_r" class="input-group-text">rutas</label>
+                            <select class="form-select" aria-label="Default select example" id="id_re_r" name="id_re_r">
+                                {{#if rutas}}
+                                    {{#each rutas}}
+                                    <option value="{{id_r}}">{{nombre_r}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Crear</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

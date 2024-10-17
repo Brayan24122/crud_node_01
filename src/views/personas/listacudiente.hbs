@@ -1,45 +1,29 @@
 <div class="container">
     <div class="row mt-5">
-        <h3 class="text-center text-uppercase p-2">Lista de personas</h3>
-        {{#if registros}}
+        <h3 class="text-center text-uppercase p-2">Lista de Acudientes</h3>
+        {{#if acudientes}}
             <table class="table text-center">
                 <thead>
                     <tr class="table-dark">
                         <th scope="col" class="col-4">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Edad</th>
-                        <th scope="col">Fecha de nacimiento</th>
-                        <th scope="col">Correo Electronico</th>
-                        <th scope="col">Discapacidad</th>
-                        <th scope="col">Tipo de documento</th>
-                        <th scope="col">Documento</th>
                         <th scope="col">Profecion</th>
-                        <th scope="col">Nombre acudiente</th>
-                        <th scope="col">Apellido acudiente</th>
-                        <th scope="col">Telefono</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each registros}}
+                    {{#each acudientes}}
                         <tr>
-                            <td>{{nombre_r}}</td>
-                            <td>{{apellido_r}}</td>
-                            <td>{{edad_r}}</td>
-                            <td>{{fecha}}</td>
-                            <td>{{correo_r}}</td>
-                            <td>{{abrebiatura_dis}}</td>
-                            <td>{{abrebiatura_td}}</td>
-                            <td>{{documento_r}}</td>
-                            <td>{{descripcion}}</td>
                             <td>{{nombre_a}}</td>
                             <td>{{apellido_a}}</td>
-                            <td>{{telefono_r}}</td>
+                            <td>{{edad_a}}</td>
+                            <td>{{descripcion}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/edit/{{id_r}}" class="btn btn-warning p-2">
+                                    <a href="/editacudiente/{{id_a}}" class="btn btn-warning p-2">
                                     <i class="fa-solid fa-pencil"></i></a>
-                                    <a href="/delete/{{id_r}}" class="btn btn-danger p-2">
+                                    <a href="/deleteacudiente/{{id_a}}" class="btn btn-danger p-2">
                                     <i class="fa-solid fa-trash"></i></a>
                                 </div>
                             </td>
@@ -48,7 +32,7 @@
                 </tbody>
                 <tfoot>
                     <tr class="table-dark">
-                        <td colspan="13">REGISTRO DE PERSONAS</td>
+                        <td colspan="11">REGISTRO DE PERSONAS</td>
                     </tr>
                 </tfoot>
             </table>
@@ -56,11 +40,11 @@
         {{else}}
             <div class="card text-center mx-auto" style="width: 350px">
                 <div class="card-header">
-                    <h3>Debes crear una persona</h3>
+                    <h3>Debes crear un acudiente</h3>
                 </div>
                 <div class="card-body">
                     <p>Presiona este boton para que puedas registra a una persona en la aplicacion</p>
-                    <a href="#" class="btn btn-primary">Ir a crear</a>
+                    <a href="/acudiente" class="btn btn-primary">Ir a crear</a>
                 </div>
         {{/if}}
     </div>

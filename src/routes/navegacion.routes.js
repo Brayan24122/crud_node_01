@@ -7,8 +7,8 @@ router.get('/inicio', (req, res)=>{
     res.render('navegacion/inicio')
 });
 
-router.get('/dondesedirigue', (req, res)=>{
-    res.render('navegacion/dondesedirigue')
+router.get('/crearuta', (req, res)=>{
+    res.render('rutas/crearuta')
 });
 
 router.get('/buses', (req, res)=>{

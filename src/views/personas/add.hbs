@@ -3,7 +3,7 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase">CREAE NUEVA PERSONA</h3>
+                    <h3 class="text-uppercase">REGISTRARCE</h3>
                 </div>
                 <div class="card-body">
                     <form action="/add" method="post">
@@ -18,6 +18,62 @@
                     <div class="input-group mt-2">
                         <label for="edad_r" class="input-group-text">Edad</label>
                         <input class="form-control" type="number" name="edad_r" id="edad_r" placeholder="0" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="fecha_nacimiento_r" class="input-group-text">Fecha Nacimiento</label>
+                        <input class="form-control" type="date" name="fecha_nacimiento_r" id="fecha_nacimiento_r" placeholder="DD-MM-AAAA" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="correo_r" class="input-group-text">E-mail</label>
+                        <input class="form-control" type="email" name="correo_r" id="correo_r" placeholder="correo@gmail.com" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_dis_r" class="input-group-text">Discapacidad:</label>
+                            <select class="form-select" aria-label="Default select example" id="id_dis_r" name="id_dis_r">
+                                {{#if discapacidad}}
+                                    {{#each discapacidad}}
+                                    <option value="{{id_dis}}">{{abrebiatura_dis}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_td_r" class="input-group-text">Tipo de Documento</label>
+                            <select class="form-select" aria-label="Default select example" id="id_td_r" name="id_td_r">
+                                {{#if tipo_documento}}
+                                    {{#each tipo_documento}}
+                                    <option value="{{id_td}}">{{abrebiatura_td}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="documento_r" class="input-group-text">Cedula</label>
+                        <input class="form-control" type="text" name="documento_r" id="documento_r" placeholder="Ejemplo:123456789" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_p_r" class="input-group-text">Profecion</label>
+                            <select class="form-select" aria-label="Default select example" id="id_p_r" name="id_p_r">
+                                {{#if profecion}}
+                                    {{#each profecion}}
+                                    <option value="{{id_p}}">{{descripcion}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_a_r" class="input-group-text">Nombre acudiente</label>
+                            <select class="form-select" aria-label="Default select example" id="id_a_r" name="id_a_r">
+                                {{#if acudientes}}
+                                    {{#each acudientes}}
+                                    <option value="{{id_a}}">{{nombre_a}}</option>
+                                    {{/each}}
+                                {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="telefono_r" class="input-group-text">Telefono</label>
+                        <input class="form-control" type="text" name="telefono_r" id="telefono_r" placeholder="Ejemplo:123456789" required pattern="[3]{1}[0-9]{9}">
                     </div>
                     <div class="form-group mt-4 d-grid gap-2">
                         <button class="btn btn-success"> Crear</button>
